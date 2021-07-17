@@ -1,0 +1,37 @@
+{
+  "name": "open-musics-app-back-end",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start-dev": "nodemon ./src/server.js",
+    "lint": "eslint ./"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saul-paulus/open-music-app-back--end-submission-dicoding.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/saul-paulus/open-music-app-back--end-submission-dicoding/issues"
+  },
+  "homepage": "https://github.com/saul-paulus/open-music-app-back--end-submission-dicoding#readme",
+  "devDependencies": {
+    "eslint": "^7.30.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "nodemon": "^2.0.12"
+  },
+  "dependencies": {
+    "@hapi/hapi": "^20.1.5",
+    "dotenv": "^10.0.0",
+    "joi": "^17.4.1",
+    "nanoid": "^3.1.23",
+    "pg": "^8.6.0"
+  }
+}
