@@ -1,7 +1,7 @@
 /* eslint-disable camelcase */
 
 exports.up = pgm => {
-  pgm.createTable('musics', {
+  pgm.createTable('songs', {
     id: {
       type: 'VARCHAR(50)',
       primaryKey: true
@@ -27,18 +27,16 @@ exports.up = pgm => {
       notNull: true
     },
     inserted_at: {
-      type: 'TIMESTAMP',
-      notNull: true,
-      default: pgm.func('current_timestamp')
+      type: 'TEXT',
+      notNull: true
     },
     updated_at: {
-      type: 'TIMESTAMP',
-      notNull: true,
-      default: pgm.func('current_timestamp')
+      type: 'TEXT',
+      notNull: true
     }
   })
 }
 
 exports.down = pgm => {
-  pgm.dropTable('musics')
+  pgm.dropTable('songs')
 }

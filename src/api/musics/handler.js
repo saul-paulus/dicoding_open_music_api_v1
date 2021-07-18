@@ -49,11 +49,16 @@ class MusicHandler {
   }
 
   async getAllMusicsHandler () {
-    const musics = await this._service.getMusics()
+    const music = await this._service.getMusics()
+    const song = music.map(m => ({
+      id: m.id,
+      title: m.title,
+      performer: m.performer
+    }))
     return {
       status: 'success',
       data: {
-        musics
+        song
       }
     }
   }
@@ -61,12 +66,12 @@ class MusicHandler {
   async getMusicByIdHandler (request, h) {
     try {
       const { songId } = request.params
-      const music = await this._service.getMusicById(songId)
+      const song = await this._service.getMusicById(songId)
 
       return {
         status: 'success',
         data: {
-          music
+          song
         }
       }
     } catch (error) {
@@ -101,7 +106,7 @@ class MusicHandler {
 
       return {
         status: 'success',
-        message: 'Lagu berhasil diperbaharui'
+        message: 'Lagu berhasil diperbarui'
       }
     } catch (error) {
       if (error instanceof ClientError) {
