@@ -15,16 +15,16 @@ class MusicsService {
     const updatedAt = insertedAt
 
     const query = {
-      text: 'INSERT INTO musics VALUE($1, $2, $3, $4, $5, $6, $7, $8) RETURNING id',
+      text: 'INSERT INTO musics VALUES($1, $2, $3, $4, $5, $6, $7, $8) RETURNING id',
       values: [id, title, year, performer, genre, duration, insertedAt, updatedAt]
     }
     const result = await this._pool.query(query)
 
-    if (!result.row[0].id) {
+    if (!result.rows[0].id) {
       throw new InvariantError('Lagu gagal ditambhakan')
     }
 
-    return result.row[0].id
+    return result.rows[0].id
   }
 
   async getMusics () {
